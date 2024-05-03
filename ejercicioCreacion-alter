@@ -1,0 +1,31 @@
+CREATE TABLE EMPLEADOS10(
+ID INT,
+DNI INT,
+NOMBRE varchar(30),
+TELEFONO VARCHAR(30),
+SUELDO FLOAT UNSIGNED
+);
+
+-- CAMBIAR ID QUIERO QUE SEA AUTO_INCREMENT
+-- ID QUE SEA PRIMARY KEY
+-- NOMBRE Y TELEFONO NOT NULL
+-- QUE SUELDO ESTE ENTRE NOMBRE Y TELEFONO
+-- AGREGAR NUMERO INT UNSIGNED UNIQUE KEY
+
+desc empleados10;
+
+alter table empleados10 modify id int primary key auto_increment;
+alter table empleados10 modify nombre varchar(30) not null;
+alter table empleados10 modify telefono varchar(30) not null; 
+alter table empleados10 modify sueldo float unsigned after nombre;  
+alter table empleados10 add column numero int UNSIGNED UNIQUE KEY; 
+alter table empleados10 modify id int ;
+alter table empleados10 drop primary key;
+alter table empleados10 add primary key (dni); 
+
+desc empleados10;
+
+ALTER TABLE EMPLEADOS10 ADD COLUMN FECHA_ALTA DATE; 
+ALTER TABLE EMPLEADOS10 CHANGE FECHA_ALTA FECHA_ALT DATE NOT NULL;
+ALTER TABLE EMPLEADOS10 MODIFY FECHA_ALT DATE NOT NULL AFTER NOMBRE;
+alter table empleados10 modify nombre varchar(50) not null;
